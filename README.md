@@ -1,0 +1,2 @@
+# dAnimeSmoothPlayer
+dアニメストアのフリーズバグを擬似的に回避します
