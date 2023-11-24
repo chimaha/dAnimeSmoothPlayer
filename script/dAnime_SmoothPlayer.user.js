@@ -38,20 +38,20 @@ freezeRemover(250);
 const seekbar = document.querySelector('.seekArea');
 seekbar.addEventListener("mouseup", () => {
     console.log("クリック");
-    freezeRemover(400);
+    freezeRemover(300);
 });
 
 // シークバー下の30秒戻るボタンを押した時
 const backButton = document.querySelector('.buttonArea > .back');
 backButton.addEventListener("click", () => {
     console.log("クリック");
-    freezeRemover(400);
+    freezeRemover(300);
 });
 
 // 左矢印キーとjキーを押した時
 document.addEventListener("keyup", e => {
     if (e.key == "ArrowLeft" || e.key == "j") {
         console.log(e.key);
-        freezeRemover(480)
+        freezeRemover(380)
     }
 });
