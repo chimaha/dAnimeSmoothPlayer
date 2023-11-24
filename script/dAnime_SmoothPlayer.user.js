@@ -3,7 +3,7 @@
 // @namespace   https://github.com/chimaha/dAnimeSmoothPlayer
 // @match       https://animestore.docomo.ne.jp/animestore/sc_d_pc*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      chimaha
 // @description dアニメストアのFirefox限定フリーズバグを擬似的に回避します 
 // @license     MIT license
