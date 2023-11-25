@@ -3,14 +3,12 @@
 // @namespace   https://github.com/chimaha/dAnimeSmoothPlayer
 // @match       https://animestore.docomo.ne.jp/animestore/sc_d_pc*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      chimaha
-// @description dアニメストアのFirefox限定フリーズバグを擬似的に回避します 
+// @description dアニメストアのFirefox限定フリーズバグを擬似的に回避します
 // @license     MIT license
-// @icon        https://animestore.docomo.ne.jp/favicon.ico
 // @compatible  firefox
-// @downloadURL https://github.com/chimaha/dAnimeSmoothPlayer/raw/main/script/dAnime_SmoothPlayer.user.js
-// @updateURL   https://github.com/chimaha/dAnimeSmoothPlayer/raw/main/script/dAnime_SmoothPlayer.user.js
+// @icon        https://animestore.docomo.ne.jp/favicon.ico
 // @supportURL  https://github.com/chimaha/dAnimeSmoothPlayer/issues
 // ==/UserScript==
 
@@ -30,24 +28,41 @@ function freezeRemover(setTime) {
     observer.observe(document.querySelector("#time"), config);
 }
 
+
 // 動画を開いた時
-freezeRemover(250);
+freezeRemover(200);
 
 // シークバーをクリックした時
 const seekbar = document.querySelector('.seekArea');
 seekbar.addEventListener("mouseup", () => {
-    freezeRemover(300);
+    freezeRemover(250);
 });
 
 // シークバー下の30秒戻るボタンを押した時
 const backButton = document.querySelector('.buttonArea > .back');
 backButton.addEventListener("click", () => {
-    freezeRemover(300);
+    freezeRemover(250);
 });
 
 // 左矢印キーとjキーを押した時
 document.addEventListener("keyup", e => {
     if (e.key == "ArrowLeft" || e.key == "j") {
-        freezeRemover(380)
+        freezeRemover(250);
     }
 });
+
+// 10秒以上一時停止した場合、再生再開時に実行
+let stopTime;
+let startTIme;
+video.addEventListener("pause", () => {
+    stopTime = new Date();
+})
+video.addEventListener("play", () => {
+    if (stopTime) {
+        startTIme = new Date();
+        const sec = (startTIme.getTime() - stopTime.getTime()) / 1000;
+        if (sec > 10) {
+            freezeRemover(0);
+        }
+    }
+})
