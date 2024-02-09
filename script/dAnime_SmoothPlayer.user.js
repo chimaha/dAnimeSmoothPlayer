@@ -5,12 +5,12 @@
 // @grant       none
 // @version     1.4
 // @author      chimaha
-// @description dアニメストアのFirefox限定フリーズバグを擬似的に回避します 
+// @description dアニメストアのFirefox限定フリーズバグを擬似的に回避します
 // @license     MIT license
-// @icon        https://animestore.docomo.ne.jp/favicon.ico
 // @compatible  firefox
 // @downloadURL https://github.com/chimaha/dAnimeSmoothPlayer/raw/main/script/dAnime_SmoothPlayer.user.js
 // @updateURL   https://github.com/chimaha/dAnimeSmoothPlayer/raw/main/script/dAnime_SmoothPlayer.user.js
+// @icon        https://animestore.docomo.ne.jp/favicon.ico
 // @supportURL  https://github.com/chimaha/dAnimeSmoothPlayer/issues
 // ==/UserScript==
 
